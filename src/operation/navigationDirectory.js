@@ -1,6 +1,6 @@
 import path from 'path';
 import { readdir } from 'node:fs/promises';
-import { setCurrentPath, getCurrentPath } from '../utils/current-path.js';
+import { setCurrentPath, getCurrentPath } from '../utils/currentPath.js';
 import { parseOperation, isAccessPath } from '../utils/path.js';
 
 export const handlerUp = (operation) => {

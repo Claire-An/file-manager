@@ -2,7 +2,7 @@ import { getName } from './src/utils/userName.js';
 import readline from 'readline';
 import { stdin as input, stdout as output } from 'node:process';
 import { exit } from './src/utils/exit.js';
-// import { operationHandler } from './operation/operation-handler.js';
+import { operationHandler } from './src/operation/operationHandler.js';
 import { getCurrentPath } from './src/utils/currentPath.js';
 
 const runManager = () => {
@@ -17,7 +17,7 @@ const runManager = () => {
         if (input === '.exit') {
             exit(userName);
         } else {
-            // await operationHandler(input);
+            await operationHandler(input);
             output.write(`You are currently in ${getCurrentPath()}\n`);
             output.write(`Enter command\n`);
         }
