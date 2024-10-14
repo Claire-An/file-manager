@@ -3,8 +3,8 @@ import { handlerCd, handlerUp, handlerLs } from './navigationDirectory.js';
 import { handlerCat, handlerAdd, handlerCp, handlerRn, handlerMv, handlerRm } from './basicOperation.js';
 import { handlerOs } from './operationOS.js';
 import { handlerHash } from './handlerHash.js';
-// import { handlerCompress } from './handlerCompress.js';
-// import { handlerDecompress } from './handlerDecompress.js';
+import { handlerCompress } from './handlerCompress.js';
+import { handlerDecompress } from './handlerDecompress.js';
 
 export const operationHandler = async(operation) => {
     switch (operation.split(' ')[0]) {

@@ -15,6 +15,7 @@ export const handlerCat = async (operation) => {
     let pathFile;
     try {
         pathFile = await getPathFile(getCurrentPath(), arrParamOperation[1]);
+        console.log(pathFile);
     } catch {
         console.log('File not found');
         return;
