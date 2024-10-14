@@ -1,8 +1,8 @@
 import process from 'node:process';
 import { handlerCd, handlerUp, handlerLs } from './navigationDirectory.js';
 import { handlerCat, handlerAdd, handlerCp, handlerRn, handlerMv, handlerRm } from './basicOperation.js';
+import { handlerOs } from './operationOS.js';
 // import { handlerHash } from './handlerHash.js';
-// import { handlerOs } from './handlerOs.js';
 // import { handlerCompress } from './handlerCompress.js';
 // import { handlerDecompress } from './handlerDecompress.js';
 
