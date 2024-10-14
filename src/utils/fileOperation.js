@@ -2,16 +2,13 @@ import path from 'path';
 import { isAccessPath } from './path.js';
 
 export const getPathFile = async (currentPath, newPath) => {
-    console.log(currentPath, newPath);
     if (newPath[1] == ':') {
         if (await isAccessPath(newPath)) {
             return newPath;
         }     
     }
 
-    console.log(newPath);
     const joinPath = path.join(currentPath, newPath);
-    console.log(joinPath);
  
     if (await isAccessPath(joinPath)){
         return joinPath;

@@ -3,7 +3,7 @@ import path from 'path';
 import { pipeline } from 'stream';
 import { stat, writeFile, rename, unlink } from 'node:fs/promises';
 import { parseOperation, isAccessPath, parseOperation3Args } from '../utils/path.js';
-import { getPathFile, getPathNewFile, getNameFile } from '../utils/fileOperarion.js';
+import { getPathFile, getPathNewFile, getNameFile } from '../utils/fileOperation.js';
 import { getCurrentPath } from '../utils/currentPath.js';
 
 export const handlerCat = async (operation) => {

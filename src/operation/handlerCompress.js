@@ -5,7 +5,7 @@ import zlib from 'node:zlib';
 import { stat, writeFile } from 'node:fs/promises';
 import { getCurrentPath } from '../utils/currentPath.js';
 import { parseOperation3Args, isAccessPath } from '../utils/path.js';
-import { getNameFile } from '../utils/fileOperarion.js';
+import { getNameFile } from '../utils/fileOperation.js';
 
 export const handlerCompress = async(operation) => {
     try {
@@ -26,22 +26,21 @@ export const handlerCompress = async(operation) => {
             pathNewFile = path.join(pathNewFile, nameFile + '.br');
         }
         if (await isAccessPath(pathFile)) {
-            console.log(pathFile);
             await stat(pathNewFile).then(() => {
                 console.log('Operation failed: file exists');
             }).catch(async () => {
                 await writeFile(pathNewFile, '', (err) => {
-                    if (err) console.log('1 Operation failed');
+                    if (err) console.log('Operation failed');
                 });
                 const readStream = fs.createReadStream(pathFile, 'utf8');
                 const writeStream = fs.createWriteStream(pathNewFile, 'utf8');
                 const zlibCompress = zlib.createBrotliCompress();
                 pipeline(readStream, zlibCompress, writeStream, (err) => {
-                    if (err) console.log('2 Operation failed');
+                    if (err) console.log('Operation failed');
                 });
             });
         } else {
-            console.log('3 Operation failed');
+            console.log('Operation failed');
         }
     } catch {
         console.log('Operation failed');
